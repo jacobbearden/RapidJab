@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -15,14 +16,21 @@ using System.Windows.Shapes;
 
 namespace RapidJab
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
+  /// <summary>
+  /// Interaction logic for MainWindow.xaml
+  /// </summary>
+  public partial class MainWindow : Window
+  {
+    public MainWindow()
     {
-        public MainWindow()
-        {
-            InitializeComponent();
-        }
+      InitializeComponent();
+
+      this.Title = "Rapid Jab (" + getVersion().ToString() + ")";
     }
+
+    private Version getVersion()
+    {
+      return Assembly.GetExecutingAssembly().GetName().Version;
+    }
+  }
 }
