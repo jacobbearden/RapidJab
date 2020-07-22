@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>netcoreapp3.0</TargetFramework>
+        <UseWPF>true</UseWPF>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Folder Include="Controls" />
+      <Folder Include="Localization" />
+      <Folder Include="Models\Dialogs" />
+      <Folder Include="Views\Dialogs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Resources\icon.png" />
+      <Resource Include="Resources\icon.png" />
+      <None Remove="Resources\ssbm-menu-ok.wav" />
+      <Resource Include="Resources\ssbm-menu-ok.wav" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="LibUsbDotNet" Version="3.0.81-alpha" />
+    </ItemGroup>
+
+</Project>
